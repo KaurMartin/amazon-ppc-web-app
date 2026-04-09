@@ -72,6 +72,11 @@ Or:
 3. Set the main file to `app.py`
 4. Deploy
 
+Important:
+- `app.py` is the Streamlit UI entrypoint.
+- `analyzer_core.py` is the analysis engine and should not be selected as the main file in Streamlit Community Cloud.
+- If `analyzer_core.py` is launched by mistake, it will now forward execution to `app.py` as a safety fallback.
+
 ### Render / Railway / VPS
 Use:
 

@@ -348,3 +348,14 @@ def save_results_to_folder(results: Dict[str, object], outdir: Path) -> None:
     results['word_pairs'].to_csv(outdir / '04_word_pair_analysis.csv', index=False)
     results['recommendations'].to_csv(outdir / '05_recommended_negative_candidates.csv', index=False)
     results['high_click_zero_sale_terms'].to_csv(outdir / '06_high_click_zero_sale_search_terms.csv', index=False)
+
+
+def _run_streamlit_app_entrypoint() -> None:
+    """Fallback to the actual UI entrypoint when this module is launched directly."""
+    from app import main
+
+    main()
+
+
+if __name__ == '__main__':
+    _run_streamlit_app_entrypoint()
